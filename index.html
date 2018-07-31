@@ -59,10 +59,12 @@
       text-align: center;
       color: gray;
     }
+
     .intl-tel-input {
       text-align: center;
     }
-    .intl-tel-input.allow-dropdown .flag-container{
+
+    .intl-tel-input.allow-dropdown .flag-container {
       left: 20px;
     }
   </style>
@@ -112,20 +114,29 @@
       utilsScript: "./js/utils.js" // just for formatting/placeholders etc
     });
 
-    $("#numberInput").on("keyup change", function() {
-    intlNumber = $("#numberInput").intlTelInput("getNumber");
-    if (intlNumber) {
-      $("#hint").text(intlNumber);
-    } else {
-      intlNumber = null;
-      $("#hint").text("Please enter a number");
-    }
-  });
+    $("#numberInput").on("keyup change", function () {
+      intlNumber = $("#numberInput").intlTelInput("getNumber");
+      if (intlNumber) {
+        $("#hint").text(intlNumber);
+      } else {
+        intlNumber = null;
+        $("#hint").text("Please enter a number");
+      }
+    });
 
-  window.sendMessage = function(e) {
-    e.preventDefault();
-    window.open("https://api.whatsapp.com/send?phone="+intlNumber.replace("+", ""));
-  }
+    window.sendMessage = function (e) {
+      e.preventDefault();
+      window.open("https://api.whatsapp.com/send?phone=" + intlNumber.replace("+", ""));
+    }
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123143004-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-123143004-1');
   </script>
 </body>
 
