@@ -69,19 +69,28 @@
 
       footer {
         margin-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
       }
-        footer a {
-          display: flex;
-        }
-          footer a img{
-            height: 17px;
-          }
+      footer a {
+        display: flex;
+        color: #333;
+        text-decoration: none;
+      }
+      footer a img {
+        height: 17px;
+      }
+      footer a span {
+        padding-top: 2px;
+      }
     </style>
   </head>
 
   <body class="flexColumn" style="justify-content: space-between;">
-      <main>
-          <header class="flexColumn">
+    <main>
+      <header class="flexColumn">
         <div class="logo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +129,7 @@
       </header>
       <form action="#" onsubmit="return window.sendMessage(event)">
         <div class="flexColumn">
-          <input type="tel" id="numberInput" class="input" required/>
+          <input type="tel" id="numberInput" class="input" required />
           <p id="hint">Please enter a number</p>
           <input type="submit" id="submitBtn" value="Start!" class="input" />
         </div>
@@ -128,7 +137,14 @@
     </main>
 
     <footer>
-      <a id="twitterLink" href="https://twitter.com/a_rahmanshah"><img src="./img/twitter.svg" alt="twitter icon" srcset="">@a_rahmanshah</a>
+      <a href="https://twitter.com/a_rahmanshah"
+        ><img src="./img/twitter.svg" alt="twitter icon" srcset="" />
+        <span>@a_rahmanshah</span></a
+      >
+      <a href="https://github.com/arhmnsh/WhatsappSender"
+        ><img src="./img/github.svg" alt="github icon" srcset="" />
+        <span>Code on Github</span></a
+      >
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/intlTelInput.min.js"></script>
